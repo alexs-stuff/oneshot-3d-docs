@@ -72,7 +72,7 @@ function sb_refs(): NewSidebarItem[] {
     return [
         {
             text: "OneShot.Modding.Models",
-            collapsed: true,
+            collapsed: false,
             
             
             items: [

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { DefaultTheme, VPLink } from 'vitepress/theme'
-import { computed } from 'vue'
+import type { DefaultTheme } from 'vitepress/theme'
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import { useSidebarItemControl } from 'vitepress/dist/client/theme-default/composables/sidebar.js'
-
+import { computed } from 'vue'
+import VPSidebarItem from './VPSidebarItem.vue'
 
 const props = defineProps<{
     item: DefaultTheme.SidebarItem
@@ -49,6 +50,10 @@ function onItemInteraction(e: MouseEvent | Event) {
     if ('key' in e && e.key !== 'Enter') {
         return
     }
+    // if the click came from inside a link, let it through
+    if (e.target instanceof HTMLElement && e.target.closest('a')) {
+        return
+    }
     !props.item.link && toggle()
 }
 
@@ -74,7 +79,7 @@ function onCaretClick() {
             <component v-else :is="textTag" class="text" v-html="item.text" />
             <div v-if="item.collapsed != null && item.items && item.items.length" class="caret" role="button"
                 aria-label="toggle section" @click="onCaretClick" @keydown.enter="onCaretClick" tabindex="0">
-                <span class="vpi-chevron-right caret-ico    n" />
+                <span class="vpi-chevron-right caret-icon" />
             </div>
         </div>
 
@@ -104,7 +109,7 @@ function onCaretClick() {
   font-weight: bold;
   flex-shrink: 0;
   background: color-mix(in srgb, v-bind(badgeColor) 50%, transparent);
-
+  pointer-events: none;
 }
 
 .VPSidebarItem.collapsed.level-0 {
@@ -129,6 +134,7 @@ function onCaretClick() {
     width: 2px;
     border-radius: 2px;
     transition: background-color 0.25s;
+    pointer-events: none;
 }
 
 .VPSidebarItem.level-2.is-active>.item>.indicator,
