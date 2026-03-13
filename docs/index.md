@@ -1,25 +1,16 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "OneShot 3D Docs"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: OneShot 3D Docs
+  tagline: docs for oneshot 3d lmao
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Modding Guide
+      link: /guide/modding/
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
-
+      text: API Reference
+      link: /reference/
+    - theme: alt
+      text: All Guides
+      link: /guide/

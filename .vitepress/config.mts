@@ -1,30 +1,84 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, DefaultTheme } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/oneshot-3d-docs/",
+
   srcDir: "docs",
   
-  title: "OneShot 3D Docs",
-  description: "A VitePress Site",
+  title: "OS3D Docs",
+  markdown: {
+    config: (md) => {
+      md.core.ruler.push('custom_tag', (state) => {
+        state.tokens.forEach(token => {
+          if (token.type === 'inline' && token.children) {
+            token.children.forEach(child => {
+              if (child.type === 'text') {
+                child.content = child.content.replace(
+                  /:\[(.+?)\]:/g,
+                  (_, text) => `<span class="vp-tag">${text}</span>`
+                )
+                if (child.content.includes('vp-tag')) {
+                  child.type = 'html_inline'
+                }
+              }
+            })
+          }
+        })
+      })
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+     outline: [2, 3],
+
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: "Guides", link: "/guide"},
+      { text: "Reference", link: "/reference"}
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    footer: {
+      message: "Niko (OneShot), OneShot is property of Future Cat Games. All credits of their assets goes to them",
+      copyright: "Copyright © Alex's Stuff 2025-2026"
+    },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+    sidebar: {
+        '/guide/': { base: '/guide/', items: sb_guide() },
+        '/reference/': {base: '/reference/', items: sb_refs() }
+    },
+    
   }
 })
+
+type NewSidebarItem = Omit<DefaultTheme.SidebarItem, 'items'> & {
+  badge?: { text: string; color: string }
+  items?: NewSidebarItem[]
+}
+function sb_guide(): NewSidebarItem[] {
+    return [
+        {
+            text: "Modding", 
+            collapsed: false,
+            link: "/modding/",
+            items: [
+              { text: "Getting Started", link: "/modding/getting-started" }
+            ]
+        }
+    ]
+}
+
+function sb_refs(): NewSidebarItem[] {
+    return [
+        {
+            text: "OneShot.Modding.Models",
+            collapsed: true,
+            
+            
+            items: [
+              { text: "ModConfiguration", link: "/modding/mod-configuration", badge: {text: "T", color: 'var(--vp-c-indigo-3)' }, }
+              
+            ]
+        }
+    ]
+}

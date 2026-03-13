@@ -3,6 +3,8 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import "./custom.css"
+import VPSidebarItem from './components/VPSidebarItem.vue'
 
 export default {
   extends: DefaultTheme,
@@ -11,7 +13,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    // ...
+  enhanceApp({ app }) {
+    app.component('VPSidebarItem', VPSidebarItem)
   }
 } satisfies Theme

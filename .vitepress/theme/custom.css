@@ -1,0 +1,10 @@
+.vp-tag {
+    background: color-mix(in srgb, var(--vp-c-indigo-3) 30%, transparent);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-right: 8px;
+  font-size: 14px;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+}
