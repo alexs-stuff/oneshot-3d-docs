@@ -49,6 +49,8 @@ Mod version
 
 ### `authors[]`
 
+:[ Nullable ]:
+
 ```csharp
 public string[] authors
 ```

@@ -2,7 +2,7 @@ import { defineConfig, DefaultTheme } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/oneshot-3d-docs/",
+  base: "/",
 
   srcDir: "docs",
   
@@ -57,6 +57,10 @@ type NewSidebarItem = Omit<DefaultTheme.SidebarItem, 'items'> & {
 }
 function sb_guide(): NewSidebarItem[] {
     return [
+        {
+            text: "Home", 
+            link: "/",
+        },
         {
             text: "Modding", 
             collapsed: false,
