@@ -7,15 +7,13 @@ OneShot.Modding.Models
 public class ModConfiguration
 ```
 
-:[ Non Creatable ]:
+:[ Core Only ]: :[ Non Creatable ]:
 
 ## Overview
 
 this is the class that has all the configuration data for a mod
 
 ## Properties
-
----
 
 ### `name`
 
@@ -56,7 +54,3 @@ public string[] authors
 ```
 
 Authors of the mod
-
-## Methods
-
-N/A

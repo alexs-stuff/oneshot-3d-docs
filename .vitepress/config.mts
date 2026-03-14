@@ -89,8 +89,8 @@ function sb_refs(): NewSidebarItem[] {
             
             
             items: [
-              { text: "ModConfiguration", link: "/modding/mod-configuration", badge: {text: "T", color: 'var(--vp-c-indigo-3)' }, }
-              
+              { text: "Mod", link: "/modding/mod", badge: {text: "C", color: 'var(--vp-c-green-3)' }, },
+              { text: "ModConfiguration", link: "/modding/mod-configuration", badge: {text: "T", color: 'var(--vp-c-indigo-3)' }, },
             ]
         }
     ]
