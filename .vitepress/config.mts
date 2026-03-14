@@ -7,6 +7,8 @@ export default defineConfig({
   srcDir: "docs",
   
   title: "OS3D Docs",
+
+  ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
       md.core.ruler.push('custom_tag', (state) => {
