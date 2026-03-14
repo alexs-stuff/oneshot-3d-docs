@@ -1,4 +1,6 @@
-# OneShot.Modding.Models.ModConfiguration
+OneShot.Modding.Models
+
+# ModConfiguration
 
 ```csharp
 [Serializable]
@@ -10,8 +12,6 @@ public class ModConfiguration
 ## Overview
 
 this is the class that has all the configuration data for a mod
-
-
 
 ## Properties
 

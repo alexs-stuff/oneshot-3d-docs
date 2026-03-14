@@ -38,6 +38,15 @@ export default defineConfig({
       { text: "Reference", link: "/reference"}
     ],
 
+    search: {
+      provider: "algolia",
+      options: {
+        appId: "AR8K7THRQ9",
+        apiKey: "99b3dce4d0a46a993344c4d8d1375996", //search api key
+        indexName: "docs"
+      }
+    },
+
     footer: {
       message: "Niko (OneShot), OneShot is property of Future Cat Games. All credits of their assets goes to them",
       copyright: "Copyright © Alex's Stuff 2025-2026"
