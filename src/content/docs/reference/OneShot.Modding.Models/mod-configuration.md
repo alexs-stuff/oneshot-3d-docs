@@ -1,6 +1,8 @@
-OneShot.Modding.Models
+---
+title: ModConfiguration
+description: OneShot.Modding.Models
+---
 
-# ModConfiguration
 
 ```csharp
 [Serializable]

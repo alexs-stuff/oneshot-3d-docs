@@ -1,11 +1,19 @@
 {
-  "dependencies": {},
-  "devDependencies": {
-    "vitepress": "^2.0.0-alpha.16"
-  },
+  "name": "o",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.38.1",
+    "@astrojs/starlight-docsearch": "^0.7.0",
+    "astro": "^6.0.1",
+    "sharp": "^0.34.2",
+    "starlight-sidebar-topics": "^0.7.1"
   }
 }

@@ -1,0 +1,105 @@
+
+:root {
+    --sl-nav-height: 3.125rem;
+    --sl-nav-pad-y: 0.5rem;
+    --sl-nav-pad-x: 0.75rem;
+    --sl-nav-gap: 0.5rem;
+
+    --sl-color-bg: #000;
+    --sl-color-bg-nav: color-mix(in oklab, #000 35%, transparent);
+    --sl-color-bg-sidebar: var(--sl-color-bg-nav);
+
+  
+    
+    --sl-color-hairline: color-mix(in oklab, #fff 5%, transparent);
+    --sl-color-hairline-shade: var(--sl-color-hairline);
+    --sl-color-hairline-light: var(--sl-color-hairline);
+}
+body {
+    background-image: url(/wallpaper.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+    background-size: cover;
+
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+        
+
+  
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+
+starlight-theme-select {
+  display: none !important;
+}
+
+header.header {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+
+}
+
+
+.right-sidebar {
+    background-color: var(--sl-color-bg-sidebar);
+    height: 100%;
+}
+
+
+@media (min-width: 72rem) {
+
+    .right-sidebar-container {
+        width: var(--sl-sidebar-width);
+    }
+
+
+
+    .sl-container {
+        width: 100%;
+    }
+
+    .main-pane {
+        width: 100%;
+    }
+
+
+
+
+}
+
+@media (min-width: 50rem) {
+    sl-doc-search {
+        justify-items: center;
+    }
+}
+
+
+
+astro-dev-toolbar {
+    display: none;
+}
+
+.sl-container {
+    margin-inline: 0px;
+}
+
+.main-pane main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1#_top {
+    width: 100%;
+}
